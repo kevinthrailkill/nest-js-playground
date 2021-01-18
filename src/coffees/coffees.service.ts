@@ -34,7 +34,7 @@ export class CoffeesService {
     console.log(coffeesConfiguration.foo);
   }
 
-  findAll(paginationQuery: PaginationQueryDto) {
+  async findAll(paginationQuery: PaginationQueryDto) {
     const { limit, offset } = paginationQuery;
     return this.coffeeRepository.find({
       relations: ['flavors'],
